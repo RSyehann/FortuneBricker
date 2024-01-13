@@ -1,0 +1,21 @@
+.pixel-art-style {
+    font-family: 'Press Start 2P', cursive;
+    /* This is a commonly used pixel art font */
+    image-rendering: pixelated;
+    /* Makes images have a pixelated look */
+    image-rendering: -moz-crisp-edges;
+    /* For Firefox */
+    image-rendering: crisp-edges;
+    border: 1px solid #000;
+    /* Black border for that pixelated look */
+    background-color: #fff;
+    /* White background */
+    color: #000;
+    /* Black text color */
+}
+
+.pixel-art-style {
+    /* ... other styles from above ... */
+    padding: 0.5em;
+    margin: 1em;
+}
