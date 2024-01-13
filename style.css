@@ -1,21 +1,173 @@
-.pixel-art-style {
+.html {
+    height: 100%;
+    margin: 0;
     font-family: 'Press Start 2P', cursive;
-    /* This is a commonly used pixel art font */
-    image-rendering: pixelated;
-    /* Makes images have a pixelated look */
-    image-rendering: -moz-crisp-edges;
-    /* For Firefox */
-    image-rendering: crisp-edges;
-    border: 1px solid #000;
-    /* Black border for that pixelated look */
-    background-color: #fff;
-    /* White background */
-    color: #000;
-    /* Black text color */
+    /* 像素風格字體 */
 }
 
-.pixel-art-style {
-    /* ... other styles from above ... */
-    padding: 0.5em;
-    margin: 1em;
+body {
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 漸變風格 */
+    background: linear-gradient(135deg, #1a1a1a 25%, #0a0a0a 25%, #0a0a0a 50%, #1a1a1a 50%, #1a1a1a 75%, #0a0a0a 75%, #0a0a0a);
+    background-size: 20px 20px;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* 為了偽元素定位 */
+    overflow: hidden;
+    /* 防止偽元素在頁面之外顯示 */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, transparent, transparent 50%, #3333 50%, #333 75%, transparent 75%);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle at 50% 50%, #ffd70055, transparent), radial-gradient(circle at 12.5% 12.5%, #0d6efd55, transparent);
+    background-size: 200px 200px, 100px 100px;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+#interface {
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 20px;
+    box-shadow: 5px 5px 0 #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* 將interface 固定位置 */
+    margin-top: 60px;
+    /*根據手稿添加邊框 */
+}
+
+#logo {
+    font-size: 24px;
+    /* Adjust the size as needed */
+    font-family: "Gill Sans", sans-serif;
+    border: 2px solid #000;
+    /* Add border around the logo */
+    padding: 5px;
+}
+
+header {
+    position: fixed;
+    /* 固定頭部，使其始終顯示在畫面上 */
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    /* 將標題和按鈕分散到兩旁 */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    /* 確保padding不會  影響元素寬度 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow for depth */
+    align-items: center;
+    background-color: #0d6efd;
+    z-index: 10
+}
+
+header h1 {
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#connectButton {
+    padding: 10px 20px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    /*圓角邊緣 */
+    cursor: pointer;
+    /* 鼠標懸停時顯示指針 */
+    font-size: 16px;
+    /* 設置字體大小 */
+    align-self: center;
+    /* 與標題垂直居中 */
+    position: relative;
+    z-index: 11;
+    /* Ensure the button is above the header */
+}
+
+main {
+    padding-top: 60px;
+    /* 這裡可以根據需要添加更多樣式 */
+}
+
+button {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.1s ease;
+    padding: 10px;
+}
+
+button:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+#payButton {
+    background-color: #0d6efd;
+    /* 設定按鈕顏色 */
+    color: white;
+    /* 文字顏色 */
+    border: none;
+    /* */
+    border-radius: 20px;
+    /* 圓角邊緣 */
+    padding: 10px 20px;
+    /* 按鈕內邊距 */
+    cursor: pointer;
+    /* 鼠標懸停時顯示指針 */
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 10px;
+    border: 2px solid #000;
+    background-color: #e9ecef;
+    box-shadow: 3px 3px 0 #000;
+}
+
+footer {
+    background-color: #fff;
+    color: #000;
 }
